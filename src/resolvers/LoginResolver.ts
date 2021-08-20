@@ -17,7 +17,11 @@ class getLoginArgs {
 @Resolver()
 class LoginResolver {
 
-    @Mutation(returns => AuthPayload)
+    @Mutation(
+        returns => AuthPayload,
+        {
+            description: 'Resolver para login de usuário'
+        })
     async login(
         @Args() { email, password }: getLoginArgs,
         @Ctx() { prisma: { user } }: Context,

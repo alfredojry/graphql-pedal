@@ -18,7 +18,11 @@ class getSignupArgs {
 @Resolver()
 class SignupResolver {
 
-    @Mutation(returns => AuthPayload)
+    @Mutation(
+        returns => AuthPayload,
+        {
+            description: 'Resolver para cadastro de novo usuário'
+        })
     async signup(
         @Args() { name, email, password }: getSignupArgs,
         @Ctx() { prisma: { user } }: Context

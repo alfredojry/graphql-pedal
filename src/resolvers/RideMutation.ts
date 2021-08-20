@@ -25,7 +25,7 @@ class GetRideArgs {
 @Resolver()
 class RideMutation {
 
-    @Mutation(returns => Ride)
+    @Mutation(returns => Ride, { description: 'Cadastro de novo pedal' })
     async newRide(
         @Args() args: GetRideArgs,
         @Ctx() { prisma: { ride }, userId }: Context

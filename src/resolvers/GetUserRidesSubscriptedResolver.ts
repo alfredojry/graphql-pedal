@@ -5,7 +5,10 @@ import { Subscription, Subscription as SubscriptionObjType } from "../models/Sub
 @Resolver()
 class GetUserRidesSubscriptedResolver {
     
-    @Query(returns => [Subscription], { nullable: true })
+    @Query(returns => [Subscription], {
+        nullable: true,
+        description: 'Consulta de pedais nos quais o usuário está inscrito',
+    })
     async getUserRidesSubscripted(
         @Ctx() { prisma: { user }, userId }: Context,
     ) {

@@ -16,10 +16,10 @@ class SubscriptionArgs {
 @Resolver()
 class SubscriptionResolver {
 
-    @Mutation(returns => SubscriptionObjType)
+    @Mutation(returns => SubscriptionObjType, { description: 'Inscrição de usuário em um pedal' })
     async subscribe(
         @Args() args: SubscriptionArgs,
-        @Ctx() { prisma: { user, ride, subscription }, userId }: Context,
+        @Ctx() { prisma: { ride, subscription }, userId }: Context,
     ) {
         if (!userId) throw new Error('No such user found');
         //if (userId.id !== args.user_id) throw new Error('Subscriptions each other forbidden');

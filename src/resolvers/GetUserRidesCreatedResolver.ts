@@ -5,7 +5,10 @@ import { Ride } from "../models/Ride";
 @Resolver()
 class GetUserRidesCreatedResolver {
     
-    @Query(returns => [Ride], { nullable: true })
+    @Query(returns => [Ride], {
+        description: 'Consulta de pedais creados pelo usuário', 
+        nullable: true,
+    })
     async getUserRidesCreated(
         @Ctx() { prisma: { user }, userId }: Context,
     ) {
