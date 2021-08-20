@@ -2,9 +2,13 @@ import 'reflect-metadata';
 import * as tq from 'type-graphql';
 import { ApolloServer } from 'apollo-server';
 import { PrismaClient } from '@prisma/client';
-//import { resolvers } from '@generated/type-graphql';
-import { RideQuery } from './resolvers/Query';
-import { GetUserRidesCreatedResolver, GetUserRidesSubscriptedResolver, LoginResolver, RideMutation, SignupResolver, SubscriptionResolver } from './resolvers/Mutation';
+import { RideQuery } from './resolvers/RideQuery';
+import { SignupResolver } from './resolvers/SignupResolver';
+import { LoginResolver } from './resolvers/LoginResolver';
+import { GetUserRidesSubscriptedResolver } from './resolvers/GetUserRidesSubscriptedResolver';
+import { GetUserRidesCreatedResolver } from './resolvers/GetUserRidesCreatedResolver';
+import { RideMutation } from './resolvers/RideMutation';
+import { SubscriptionResolver } from './resolvers/SubscriptionResolver';
 import { getUserId } from './utils';
 
 const prisma = new PrismaClient();

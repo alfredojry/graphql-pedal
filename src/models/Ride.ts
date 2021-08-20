@@ -18,18 +18,18 @@ class Ride {
     @Field()
     end_date_registration!: Date;
 
-    @Field()
-    additional_information!: string;
+    @Field({ nullable: true })
+    additional_information?: string;
 
     @Field()
     start_place!: string;
 
-    @Field(type => Int)
-    participants_limit!: number;
+    @Field(type => Int, { nullable: true })
+    participants_limit?: number;
 
     created_by!: User
 
     created_by_id!: number
 }
 
-export { Ride };
+export { Ride };    
